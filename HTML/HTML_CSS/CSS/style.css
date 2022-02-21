@@ -1,0 +1,42 @@
+.container
+{
+	width: 80%;
+	margin: auto;
+
+}
+.box-1
+{
+	background-color: #333333;
+	color: #ffffff;
+	padding: 10px;
+	border: 10px red solid;
+	border-left: 5px red solid;
+	border-right: 5px red solid;
+	border-top: 15px blue solid;
+	border-bottom: 15px blue solid;
+}
+.button
+{
+	width: 90%;
+	color: #ffffff ;
+}
+
+.branches
+{
+	border: 3px solid #ccc;
+	padding: 10px;
+	border-radiusmargin: 15px;
+}
+.Block
+{
+	float:left;
+	width: 33.3%;
+	border: 4px solid #ccc;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.clr
+{
+	clear: both;
+}

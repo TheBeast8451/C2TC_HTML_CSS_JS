@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<!--[if lt IE 9]>
+<script async src="https://www.elprocus.com/wp-content/themes/technews-codebase/js/html5.js"></script>
+<![endif]-->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>ARM7 (LPC2148) Microcontroller Features, Pin Diagram Description</title>
+	<meta name="description" content="This article discusses about ARM7 Microcontroller - LPC2148, Features  of LPC2148 and Pin Configuration of LPC2148 Microcontroller, Programming Basics." />
+	<link rel="canonical" href="https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="ARM7 (LPC2148) Microcontroller Features, Pin Diagram Description" />
+	<meta property="og:description" content="This article discusses about ARM7 Microcontroller - LPC2148, Features  of LPC2148 and Pin Configuration of LPC2148 Microcontroller, Programming Basics." />
+	<meta property="og:url" content="https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/" />
+	<meta property="og:site_name" content="ElProCus - Electronic Projects for Engineering Students" />
+	<meta property="article:published_time" content="2018-12-11T11:45:21+00:00" />
+	<meta property="article:modified_time" content="2018-12-12T04:18:26+00:00" />
+	<meta property="og:image" content="https://www.elprocus.com/wp-content/uploads/ARM-7-Pin-Configuration-featured.png" />
+	<meta property="og:image:width" content="1119" />
+	<meta property="og:image:height" content="576" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.elprocus.com/#website","url":"https://www.elprocus.com/","name":"ElProCus - Electronic Projects for Engineering Students","description":"ElProCus is an educational website on electronic projects for ECE and EEE students.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.elprocus.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/#primaryimage","inLanguage":"en-US","url":"https://www.elprocus.com/wp-content/uploads/ARM-7-Pin-Configuration-featured.png","contentUrl":"https://www.elprocus.com/wp-content/uploads/ARM-7-Pin-Configuration-featured.png","width":1119,"height":576,"caption":"ARM 7 Pin Configuration featured"},{"@type":"WebPage","@id":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/#webpage","url":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/","name":"ARM7 (LPC2148) Microcontroller Features, Pin Diagram Description","isPartOf":{"@id":"https://www.elprocus.com/#website"},"primaryImageOfPage":{"@id":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/#primaryimage"},"datePublished":"2018-12-11T11:45:21+00:00","dateModified":"2018-12-12T04:18:26+00:00","author":{"@id":"https://www.elprocus.com/#/schema/person/16de27933e8f4b0823c3c469bdadceba"},"description":"This article discusses about ARM7 Microcontroller - LPC2148, Features  of LPC2148 and Pin Configuration of LPC2148 Microcontroller, Programming Basics.","breadcrumb":{"@id":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/"]}]},{"@type":"BreadcrumbList","@id":"https://www.elprocus.com/arm7-based-lpc2148-microcontroller-pin-configuration/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.elprocus.com/"},{"@type":"ListItem","position":2,"name":"ARM7 Based (LPC2148) Microcontroller Pin Configuration"}]},{"@type":"Person","@id":"https://www.elprocus.com/#/schema/person/16de27933e8f4b0823c3c469bdadceba","name":"Tarun Agarwal","description":"Tarun Agarwal is the Chief Customer Support Officer at Elprocus. He has 8 years of experience in Customer Support, Operations and Administration.","url":"https://www.elprocus.com/author/tarun/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.elprocus.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<!-- elprocus.com is managing ads with Advanced Ads 1.31.1 – https://wpadvancedads.com/ --><script id="elpro-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://www.elprocus.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.elprocus.com/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='m3_core-css'  href='https://www.elprocus.com/wp-content/themes/technews-codebase/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='m3_google_fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C600%2C700%7CRoboto%3A400%2C400italic&#038;ver=5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='newsletter-css'  href='https://www.elprocus.com/wp-content/plugins/newsletter/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mm-compiled-options-mobmenu-css'  href='https://www.elprocus.com/wp-content/uploads/dynamic-mobmenu.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mm-google-webfont-dosis-css'  href='//fonts.googleapis.com/css?family=Dosis%3Ainherit%2C400&#038;subset=latin%2Clatin-ext&#038;ver=5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='cssmobmenu-icons-css'  href='https://www.elprocus.com/wp-content/plugins/mobile-menu/includes/css/mobmenu-icons.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cssmobmenu-css'  href='https://www.elprocus.com/wp-content/plugins/mobile-menu/includes/css/mobmenu.css' type='text/css' media='all' />
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/themes/technews-codebase/js/js.js' id='js-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/plugins/mobile-menu/includes/js/mobmenu.js' id='mobmenujs-js'></script>
+	<style type="text/css">
+		/* Body color changing option */
+		body  { background: #ffffff; } 
+		
+		/* Global Color Scheme */
+		 
+		.site-title a,  
+		.small-post-title h3 a,
+		.blog-title h3 a:hover,
+		.navigation .current, 
+		.navigation a:hover,
+		.navigation .prev:hover,
+		.navigation .next:hover,
+		.author-widget-link-holder a,
+		.single-meta a,
+		.logged-in-as a,
+		.comment-metadata a,
+		.post-content a { color: #fc0606; }
+
+		.blog-posts .blog-cat a:hover,
+		#submit { background-color: #fc0606; }
+
+		/* Post Title Color */
+		.single-title h1  { color: ; }
+
+		/* Content Color */
+		.post-content { color: ; }
+
+		/* Heading Color */
+		/* H1 to h6*/
+		.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6  { color: ; }
+
+		/* Sidebar Title Color */
+		.widget-title { color: ; }
+
+		/* Section#2 color */
+		.small-slider {border-color: ; }
+
+		/* Section#3 color */
+		.featured-area-3 .headline a {color: ; }
+
+		/* Section#4 color */
+		.blog-posts .blog-cat a {background: ; }
+
+	</style>
+	<script>
+	jQuery(document).ready(function($) {
+		//caches a jQuery object containing the header element
+		var header = $(".top-header");
+		$(window).scroll(function() {
+		    var scroll = $(window).scrollTop();
+
+		    if (scroll >= 700) {
+		        header.removeClass('top-header').addClass("sticky-top-header");
+		    } else {
+		        header.removeClass("sticky-top-header").addClass('top-header');
+		    }
+		});
+	});  
+	</script>
+
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://www.elprocus.com/wp-content/uploads/2014/01/elprocus-fevicon.png" sizes="32x32" />
+<link rel="icon" href="https://www.elprocus.com/wp-content/uploads/2014/01/elprocus-fevicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.elprocus.com/wp-content/uploads/2014/01/elprocus-fevicon.png" />
+<meta name="msapplication-TileImage" content="https://www.elprocus.com/wp-content/uploads/2014/01/elprocus-fevicon.png" />
+		<style type="text/css" id="wp-custom-css">
+			.grecaptcha-badge {opacity:0}
+		</style>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-32834435-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-32834435-1');
+</script>	
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+        
+     var mapping5 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 600], [300, 250], [336, 280], [160, 600]])
+             .addSize([360, 0], [])
+             .addSize([0, 0], [])
+             .build();
+    
+    var mapping6 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 600], [300, 250], [336, 280], [160, 600]])
+             .addSize([360, 0], [])
+             .addSize([0, 0], [])
+             .build();
+    
+    var mapping7 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 250], [336, 280]])
+             .addSize([360, 0], [[300, 250], [336, 280]])
+             .addSize([0, 0], [])
+             .build();
+    
+    var mapping8 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 250], [336, 280]])
+             .addSize([360, 0], [[300, 250], [336, 280]])
+             .addSize([0, 0], [])
+             .build();
+    
+     var mapping9 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 250], [336, 280]])
+             .addSize([360, 0], [[300, 250], [336, 280]])
+             .addSize([0, 0], [])
+             .build();
+	  
+	    var mapping10 =
+    googletag.sizeMapping()
+             .addSize([1024, 0], [[300, 250], [336, 280]])
+             .addSize([360, 0], [[300, 250], [336, 280]])
+             .addSize([0, 0], [])
+             .build();
+    
+    var REFRESH_KEY = 'refresh';
+    var REFRESH_VALUE = 'true';
+    
+	googletag.defineSlot('/21745905128/Elprocus_article_pages/Leaderboard_mid', [320, 100], 'div-gpt-ad-1629791401982-4').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping10).addService(googletag.pubads());
+    googletag.defineSlot('/21745905128/Elprocus_article_pages/Leaderboard_mid2', [320, 100], 'div-gpt-ad-1629791401982-5').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping7).addService(googletag.pubads());
+    googletag.defineSlot('/21745905128/Elprocus_article_pages/Leaderboard_mid3', [320, 100], 'div-gpt-ad-1629791401982-8').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping8).addService(googletag.pubads());
+    googletag.defineSlot('/21745905128/Elprocus_article_pages/Leaderboard_mid4', [320, 100], 'div-gpt-ad-1629791401982-9').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping9).addService(googletag.pubads());
+    googletag.defineSlot('/21745905128/Elprocus_article_pages/Sidebar_mid', [320, 100], 'div-gpt-ad-1629791401982-6').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping5).addService(googletag.pubads());
+    googletag.defineSlot('/21745905128/Elprocus_article_pages/Sidebar_bottom', [320, 100], 'div-gpt-ad-1629791401982-7').setTargeting(REFRESH_KEY, REFRESH_VALUE).defineSizeMapping(mapping6).addService(googletag.pubads());
+    
+    // Viewability based refresh function -- Number of seconds to wait after the slot becomes viewable.
+  var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 45;
+    googletag.pubads().addEventListener('impressionViewable', function(event) {
+    var slot = event.slot;
+    if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+      setTimeout(function() {
+        googletag.pubads().refresh([slot]);
+      }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+    }
+  });
+        //Lazy Loading related statements
+        googletag.pubads().enableLazyLoad();
+        googletag.pubads().enableLazyLoad({
+          // Fetch slots within 2 viewports
+          fetchMarginPercent: 200,
+          // Render slots within 1 viewports.
+          renderMarginPercent: 100,
+          // For Mobile Web
+          mobileScaling: 1.0
+        });
+    
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().setCentering(true);
+    googletag.enableServices();
+  });
+</script>
+<body class="post-template-default single single-post postid-34918 single-format-standard mob-menu-slideout-over aa-prefix-elpro-">
+		<div id="back-top">
+			<a href="#top"> <span> </span></a>
+		</div>
+	<div class="wrapper">
+	<div class="container">
+	<link href="//fonts.googleapis.com/css?family=Comfortaa:400" type="text/css" rel="stylesheet">
+		<header class="header"> 
+			<div class="logo-area">
+				<div class="logo">
+			        			          <a href="https://www.elprocus.com" rel="home"><img src="https://www.elprocus.com/wp-content/uploads/2016/11/elprocuslogo-1.png" alt="ElProCus &#8211; Electronic Projects for Engineering Students" height="54" width="201"/></a>
+			        				</div> <!-- .logo -->
+				<div class="cb"></div>
+			</div> <!-- .logo-area -->
+			<nav class="nav" role="navigation">
+				<div class="primary-nav"> 
+						<div class="menu-holder main-menu"> 
+						<!-- Mega Menu Begins Removed Mobile Responsive Code -->
+					    	 	<div class="primary-menu" > 
+					    		<ul id="menu-elprocus" class=""><li id="menu-item-26356" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="https://www.elprocus.com">Home</a></li>
+<li id="menu-item-14329" class="mega_menu_parent menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/electrical-2/">Electrical</a><div class="mega-menu-holder"><ul class="sub-posts"><li class="first"><h3 class="cat-name-title">What&#8217;s new in  <span class="menu-cat-name">Electrical  </span> </h3></li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/pneumatic-system/"><img src="https://www.elprocus.com/wp-content/uploads/Pneumatic-System-100x100.jpg" alt="Pneumatic System : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/pneumatic-system/">Pneumatic System : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/coupled-inductor/"><img src="https://www.elprocus.com/wp-content/uploads/Coupled-Inductor-100x100.jpg" alt="What is Coupled Inductor : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/coupled-inductor/">What is Coupled Inductor : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/wire-gauge/"><img src="https://www.elprocus.com/wp-content/uploads/Wire-Gauge-100x100.jpg" alt="What is Wire Gauge : Chart, Measurement &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/wire-gauge/">What is Wire Gauge : Chart, Measurement &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/sf6-circuit-breaker/"><img src="https://www.elprocus.com/wp-content/uploads/SF6-Circuit-Breaker-100x100.jpg" alt="SF6 Circuit Breaker : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/sf6-circuit-breaker/">SF6 Circuit Breaker : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/mosfet-amplifier/"><img src="https://www.elprocus.com/wp-content/uploads/MOSFET-Amplifier-Board-100x100.jpg" alt="What is MOSFET Amplifier : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/mosfet-amplifier/">What is MOSFET Amplifier : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/types-of-cables/"><img src="https://www.elprocus.com/wp-content/uploads/Differnt-Types-of-Cables-100x100.jpg" alt="Types of Cables : Working &#038; Their Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/types-of-cables/">Types of Cables : Working &#038; Their Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li></ul></li>
+<li id="menu-item-14330" class="mega_menu_parent menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="https://www.elprocus.com/category/electronics-2/">Electronics</a><div class="mega-menu-holder"><ul class="sub-posts"><li class="first"><h3 class="cat-name-title">What&#8217;s new in  <span class="menu-cat-name">Electronics  </span> </h3></li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/instruction-set-of-8085-microprocessor/"><img src="https://www.elprocus.com/wp-content/uploads/Instruction-Set-of-8085-Microprocessor-100x100.jpg" alt="Instruction Set of 8085 Microprocessor &#038; Its Classification" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/instruction-set-of-8085-microprocessor/">Instruction Set of 8085 Microprocessor &#038; Its Classification</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/position-sensor/"><img src="https://www.elprocus.com/wp-content/uploads/Position-Sensor-100x100.jpg" alt="What is Position Sensor : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/position-sensor/">What is Position Sensor : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/thermionic-emission/"><img src="https://www.elprocus.com/wp-content/uploads/Thermionic-Effect-100x100.jpg" alt="What is Thermionic Emission : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/thermionic-emission/">What is Thermionic Emission : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/cmos-inverter/"><img src="https://www.elprocus.com/wp-content/uploads/CMOS-Inverter-2-100x100.jpg" alt="What is CMOS Inverter : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/cmos-inverter/">What is CMOS Inverter : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/wire-gauge/"><img src="https://www.elprocus.com/wp-content/uploads/Wire-Gauge-100x100.jpg" alt="What is Wire Gauge : Chart, Measurement &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/wire-gauge/">What is Wire Gauge : Chart, Measurement &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/mosfet-amplifier/"><img src="https://www.elprocus.com/wp-content/uploads/MOSFET-Amplifier-Board-100x100.jpg" alt="What is MOSFET Amplifier : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/mosfet-amplifier/">What is MOSFET Amplifier : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li></ul></li>
+<li id="menu-item-36604" class="mega_menu_parent menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/communication/">Communication</a><div class="mega-menu-holder"><ul class="sub-posts"><li class="first"><h3 class="cat-name-title">What&#8217;s new in  <span class="menu-cat-name">Communication  </span> </h3></li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/address-resolution-protocol/"><img src="https://www.elprocus.com/wp-content/uploads/Address-Resolution-Protocol-or-ARP-100x100.jpg" alt="What is Address Resolution Protocol : Working &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/address-resolution-protocol/">What is Address Resolution Protocol : Working &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/network-topology/"><img src="https://www.elprocus.com/wp-content/uploads/Network-topology-100x100.jpg" alt="What is a Network Topology : Types &#038; Its Applications" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/network-topology/">What is a Network Topology : Types &#038; Its Applications</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/adaptive-differential-pulse-code-modulation-adpcm/"><img src="https://www.elprocus.com/wp-content/uploads/Adaptive-Differential-Pulse-Code-Modulation-100x100.jpg" alt="Adaptive Differential Pulse Code Modulation &#8211; ADPCM" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/adaptive-differential-pulse-code-modulation-adpcm/">Adaptive Differential Pulse Code Modulation &#8211; ADPCM</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/phase-difference-formula-equation/"><img src="https://www.elprocus.com/wp-content/uploads/Phase-Difference-1-100x100.jpg" alt="What is Phase Difference : Formula &#038; Its Equation" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/phase-difference-formula-equation/">What is Phase Difference : Formula &#038; Its Equation</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/what-is-mutual-inductance-and-its-theory/"><img src="https://www.elprocus.com/wp-content/uploads/Mutual-inductance-1-100x100.jpg" alt="What is Mutual Inductance and Its Theory" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/what-is-mutual-inductance-and-its-theory/">What is Mutual Inductance and Its Theory</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/what-is-wifi-calling-its-working/"><img src="https://www.elprocus.com/wp-content/uploads/WiFi-Calling-100x100.jpg" alt="What is WiFi Calling &#038; Its Working" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/what-is-wifi-calling-its-working/">What is WiFi Calling &#038; Its Working</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li></ul></li>
+<li id="menu-item-14335" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/robotics/">Robotics</a></li>
+<li id="menu-item-14334" class="mega_menu_parent menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/project-ideas/">Projects</a><div class="mega-menu-holder"><ul class="sub-posts"><li class="first"><h3 class="cat-name-title">What&#8217;s new in  <span class="menu-cat-name">Projects  </span> </h3></li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/arduino-uno-projects-for-beginners-and-engineering-students/"><img src="https://www.elprocus.com/wp-content/uploads/Arduino-Uno-Projects-100x100.jpg" alt="Arduino Uno Projects for Beginners and Engineering Students" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/arduino-uno-projects-for-beginners-and-engineering-students/">Arduino Uno Projects for Beginners and Engineering Students</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/image-processing-projects-for-engineering-students/"><img src="https://www.elprocus.com/wp-content/uploads/Image-Processing-Feature-image-100x100.png" alt="Image Processing Projects for Engineering Students" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/image-processing-projects-for-engineering-students/">Image Processing Projects for Engineering Students</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/gsm-based-industrial-automation/"><img src="https://www.elprocus.com/wp-content/uploads/GSM-Based-Industrial-Automation-100x100.jpg" alt="Design and Implementation of GSM Based Industrial Automation" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/gsm-based-industrial-automation/">Design and Implementation of GSM Based Industrial Automation</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/how-to-select-diy-electrical-projects-kits/"><img src="https://www.elprocus.com/wp-content/uploads/2017/01/How-to-Choose-100x100.jpg" alt="How to Choose the Right Electrical DIY Project Kits" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/how-to-select-diy-electrical-projects-kits/">How to Choose the Right Electrical DIY Project Kits</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/how-to-choose-electrical-and-electronics-projects-ideas-engineering-students/"><img src="https://www.elprocus.com/wp-content/uploads/2016/12/How-to-Choose-an-Electrical-and-Electronic-Projects-Ideas-For-Final-Year-Engineering-Students-100x100.jpg" alt="How to Choose an Electrical and Electronics Projects Ideas For Final Year Engineering Students" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/how-to-choose-electrical-and-electronics-projects-ideas-engineering-students/">How to Choose an Electrical and Electronics Projects Ideas For Final Year Engineering Students</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li>
+								<li>
+									<figure>
+										<a href="https://www.elprocus.com/engineering-students-give-importance-to-mini-projects/"><img src="https://www.elprocus.com/wp-content/uploads/2016/12/Importance-Of-Mini-Projects-100x100.jpg" alt="Why Should Engineering Students To Give More Importance To Mini Projects" width="100" height="100" /></a>
+										<figcaption><a href="https://www.elprocus.com/engineering-students-give-importance-to-mini-projects/">Why Should Engineering Students To Give More Importance To Mini Projects</a>
+										<span> </span>
+
+
+										</figcaption>
+									</figure>
+								</li></ul></li>
+<li id="menu-item-14660" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="https://www.elprocus.com/category/general/">General</a>
+<ul class="sub-menu">
+	<li id="menu-item-26749" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/arduino/">Arduino</a></li>
+	<li id="menu-item-14336" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/technology/">Technology</a></li>
+	<li id="menu-item-14661" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/free-circuits/">Free Circuits</a></li>
+	<li id="menu-item-14333" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://www.elprocus.com/category/interview-questions/">Interview Questions</a></li>
+</ul>
+</li>
+</ul>					    	</div>
+					    	<div class="cb"></div>
+					    <!-- Mega Menu ends -->
+					    </div>
+				</div>  <!-- .primary-nav -->
+
+				<div class="secondary-nav">
+					<!-- Secondary Menu Begins -->
+						<div class="secondary-menu">
+							<ul id="menu-secondary-menu" class=""><li id="menu-item-26394" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26394"><a href="https://www.elprocus.com/category/projects/">Projects</a>
+<ul class="sub-menu">
+	<li id="menu-item-26395" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26395"><a href="https://www.elprocus.com/category/projects/ece-projects/">ECE Projects</a></li>
+	<li id="menu-item-26396" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26396"><a href="https://www.elprocus.com/category/projects/eee-projects/">EEE Projects</a></li>
+</ul>
+</li>
+<li id="menu-item-39827" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39827"><a href="https://www.elprocus.com/category/project-ideas/">Project Ideas</a></li>
+<li id="menu-item-26388" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26388"><a href="https://www.elprocus.com/category/ic/">IC</a>
+<ul class="sub-menu">
+	<li id="menu-item-26389" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26389"><a href="https://www.elprocus.com/category/microcontrollers/">Microcontrollers</a>
+	<ul class="sub-menu">
+		<li id="menu-item-26390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26390"><a href="https://www.elprocus.com/category/microcontrollers/8051/">8051</a></li>
+		<li id="menu-item-26392" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26392"><a href="https://www.elprocus.com/category/microcontrollers/avr/">AVR</a></li>
+		<li id="menu-item-26393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26393"><a href="https://www.elprocus.com/category/microcontrollers/pic/">PIC</a></li>
+		<li id="menu-item-26391" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26391"><a href="https://www.elprocus.com/category/microcontrollers/arm/">ARM</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-39834" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39834"><a href="https://www.elprocus.com/category/embedded/">Embedded</a></li>
+<li id="menu-item-39833" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39833"><a href="https://www.elprocus.com/category/sensors/">Sensors</a></li>
+<li id="menu-item-39831" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-39831"><a href="https://www.elprocus.com/tag/components/">Components</a></li>
+<li id="menu-item-26398" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26398"><a href="https://www.elprocus.com/category/tools/">Tools</a>
+<ul class="sub-menu">
+	<li id="menu-item-26400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26400"><a href="https://www.elprocus.com/online-resistor-color-code-calculator/">Resistor Color Code Calculator</a></li>
+	<li id="menu-item-27257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27257"><a href="https://www.elprocus.com/ohms-law-calculator/">Ohms Law Calculator</a></li>
+	<li id="menu-item-39829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39829"><a href="https://www.elprocus.com/circuit-design-softwares/">Circuit Design</a></li>
+	<li id="menu-item-39830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39830"><a href="https://www.elprocus.com/pcb-design-softwares/">PCB Design</a></li>
+</ul>
+</li>
+<li id="menu-item-26410" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26410"><a href="https://www.elprocus.com/category/infographics/">Infographics</a></li>
+<li id="menu-item-39828" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39828"><a href="https://www.elprocus.com/category/news/">News</a></li>
+</ul>				    	</div>
+				    	<div class="cb"></div>
+		    		<!-- Secondary Menu ends -->
+				</div>
+			</nav>
+		</header> 
+<main class="main" role="main"> 
+<section>
+							<div class="post-wrapper">
+			<article id="post-34918" class="post-34918 post type-post status-publish format-standard has-post-thumbnail hentry category-electronics-2">	
+				<div class="title-area-holder">
+	<h1 class="single-title">ARM7 Based (LPC2148) Microcontroller Pin Configuration</h1>
+	<div class="single-meta-holder">
+		<!-- <div class="meta-left">
+			by <a href="https://www.elprocus.com/author/tarun/"  class="author-name" title="View all posts by Tarun Agarwal">Tarun Agarwal</a>
+			<span class="single-date-holder">  <span class="date-at">at </span>  </span>
+					</div> -->
+		<div class="clear-both"></div>
+	</div>
+</div> <!-- .title-area-holder -->
+					<div class="single-content-holder">
+										<div class="single-content">
+						<p style="text-align: justify;">Embedded system and SOC (system on chip) designers choose particular <a href="https://www.elprocus.com/evolution-of-microprocessor-with-applications/" target="_blank" rel="noopener">microprocessor cores</a>, libraries, and different tools to develop microprocessor based applications. An ARM processor is one of the best alternatives obtainable for embedded system designers. In the past few years, the ARM architecture has become very popular and these are available from different IC manufacturers. The applications of ARM processors involves in mobile phones, automotive braking systems, etc. A global ARM community partners have developed semiconductor as well as product-design corporations includes an employs like engineers, designers, &amp; developers. This article is about ARM7 based LPC2148 microcontroller, architecture and pin configuration. This article will assist you to understand the basics of the microcontroller.</p><div class="elpro-inarticle" style="margin-left: auto; margin-right: auto; text-align: center; " id="elpro-493576551"><!-- /21745905128/Elprocus_article_pages/Leaderboard_mid -->
+<div id='div-gpt-ad-1629791401982-4' style='min-width: 300px; min-height: 50px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-4'); });
+  </script>
+</div></div><br style="clear: both; display: block; float: none;"/>
+<h2 style="text-align: justify;"><strong>ARM7 based LPC2148 Microcontroller</strong></h2>
+<p style="text-align: justify;">The full form of an ARM is an advanced reduced instruction set computer <a href="https://www.elprocus.com/difference-between-risc-and-cisc-architecture/" target="_blank" rel="noopener">(RISC) machine</a>, and it is a 32-bit processor architecture expanded by ARM holdings. The applications of an ARM processor include several microcontrollers as well as processors. The architecture of an ARM processor was licensed by many corporations for designing ARM processor-based SoC products and CPUs. This allows the corporations to manufacture their products using ARM architecture. Likewise, all main semiconductor companies will make ARM-based SOCs such as Samsung, Atmel, TI etc.</p>
+<h2 style="text-align: justify;"><strong>What is an ARM7 Processor?</strong></h2>
+<p style="text-align: justify;">ARM7 processor is commonly used in embedded system applications. Also, it is a balance among classic as well as new-Cortex sequence. This processor is tremendous in finding the resources existing on the internet with excellence documentation offered by NXP Semiconductors. It suits completely for an apprentice to obtain in detail hardware &amp; software design implementation.</p>
+<h3 style="text-align: justify;"><strong>LPC2148 Microcontroller</strong></h3>
+<p style="text-align: justify;"><strong> </strong>The LPC2148 microcontroller is designed by Philips (NXP Semiconductor) with several in-built features &amp; peripherals. Due to these reasons, it will make more reliable as well as the efficient option for an application developer. LPC2148 is a 16-bit or 32-bit microcontroller based on ARM7 family.</p><div class="elpro-content" id="elpro-1171333126"><!-- /21745905128/Elprocus_article_pages/Leaderboard_mid2 -->
+<div id='div-gpt-ad-1629791401982-5' style='min-width: 300px; min-height: 50px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-5'); });
+  </script>
+</div></div>
+<h3 style="text-align: justify;"><strong>Features of LPC2148</strong></h3>
+<p style="text-align: justify;">The main features of LPC2148 include the following.</p>
+<ul style="text-align: justify;">
+<li>The LPC2148 is a 16 bit or 32 bit ARM7 family based microcontroller and available in a small LQFP64 package.</li>
+<li>ISP (in system programming) or IAP (in application programming) using on-chip boot loader software.</li>
+<li>On-chip static RAM is 8 kB-40 kB, on-chip flash memory is 32 kB-512 kB, the wide interface is 128 bit, or accelerator allows 60 MHz high-speed operation.</li>
+<li>It takes 400 milliseconds time for erasing the data in full chip and 1 millisecond time for 256 bytes of programming.</li>
+<li>Embedded Trace interfaces and Embedded ICE RT offers real-time debugging with high-speed tracing of instruction execution and on-chip Real Monitor software.</li>
+<li>It has 2 kB of endpoint RAM and USB 2.0 full speed device controller. Furthermore, this microcontroller offers 8kB on-chip RAM nearby to USB with DMA.</li>
+<li>One or two 10-bit ADCs offer 6 or 14 analogs i/ps with low conversion time as 2.44 μs/ channel.</li>
+<li>Only 10 bit DAC offers changeable analog o/p.</li>
+<li>External event counter/32 bit timers-2, PWM unit, &amp; watchdog.</li>
+<li>Low power RTC (real time clock) &amp; 32 kHz clock input.</li>
+<li>Several serial interfaces like two 16C550 UARTs, two I2C-buses with 400 kbit/s speed.</li>
+<li>5 volts tolerant quick general purpose Input/output pins in a small LQFP64 package.</li>
+<li>Outside interrupt pins-21.</li>
+<li>60 MHz of utmost CPU CLK-clock obtainable from the programmable-on-chip phase locked loop by resolving time is 100 μs.</li>
+<li>The incorporated oscillator on the chip will work by an exterior crystal that ranges from 1 MHz-25 MHz</li>
+<li>The modes for power-conserving mainly comprise idle &amp; power down.</li>
+<li>For extra power optimization, there are individual enable or disable of peripheral functions and peripheral CLK scaling.</li>
+</ul>
+<p style="text-align: justify;"><strong>Memory</strong></p>
+<p style="text-align: justify;">The LPC2148 microcontroller has 512-kB on-chip FLASH memory as well as 32-kB on-chip SRAM. Also, this microcontroller includes inherent support up to 2kB finish point USB RAM. This memory is well matched for all the <a href="https://www.elprocus.com/different-microcontrollers-used-in-automobiles/" target="_blank" rel="noopener">microcontroller applications.</a></p><div class="elpro-content_2" style="margin-left: auto; margin-right: auto; text-align: center; margin-bottom: 15px; " id="elpro-564543697"><a href="https://www.pcbway.com/?from=elprocus2022A" target="_blank" rel="nofollow noopener noreferrer"><img src="https://www.elprocus.com/ad-creatives/pcbway-726x280-Nov-2021.jpg" alt="PCBWay"></a></div>
+<p style="text-align: justify;"><strong>On-chip FLASH Memory System</strong></p>
+<p style="text-align: justify;">This microcontroller includes a 512-kB Flash memory system and this memory may be useful for both the data storage as well as code. The programming of this memory can be done by the following.</p>
+<ul style="text-align: justify;">
+<li>By incorporating JTAG interface in serial</li>
+<li>Using UART or ISP (in system programming)</li>
+<li>Capabilities of IAP (In Application Programming)</li>
+</ul>
+<p style="text-align: justify;">The IAP function Based application program may also remove while the program is running. Whenever the microcontroller LPC2148 on-chip boot-loader is utilized, then 500 kB of Flash memory is obtainable for consumer code. The Flash memory of this microcontroller offers the smallest amount of 100,000 writes/erase cycles as well as 20-years of data preservation.</p><div class="elpro-ourpcb_inline" id="elpro-330899375"><!-- /21745905128/Elprocus_article_pages/Leaderboard_mid3 -->
+<div id='div-gpt-ad-1629791401982-8' style='min-width: 300px; min-height: 50px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-8'); });
+  </script>
+</div></div>
+<p style="text-align: justify;">On-chip SRAM</p>
+<p style="text-align: justify;">This microcontroller offers static RAM with 32-kB and very useful for data storage or code. It is accessible for 8-bits, 16-bits, &amp; 32-bits.</p>
+<p style="text-align: justify;"> Input/Output Ports</p>
+<p style="text-align: justify;">The LPC2148 microcontroller has two input/output ports and these are termed as P0 &amp;P1. Every port pins are branded with PX.Y. Here, ‘X’ denotes port number like 0 or 1, whereas ‘Y’ denotes pin number 0-31. All the pins can execute alternate tasks also. For instance, P0.8 provides as GPIO and Tx pin of the UART1, AD1.1, PWM4. On RST (RESET), every pin is arranged as GPIO.</p><div class="elpro-content3" id="elpro-97017497"><!-- /21745905128/Elprocus_article_pages/Leaderboard_mid4 -->
+<div id='div-gpt-ad-1629791401982-9' style='min-width: 300px; min-height: 50px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-9'); });
+  </script>
+</div></div>
+<h3 style="text-align: justify;">How to Start with Programming?</h3>
+<p style="text-align: justify;">The initial step toward lpc2148 programming is an arrangement of GPIO Pins. So here are the related concepts as well <a href="https://www.elprocus.com/know-about-types-of-registers-in-8051-microcontroller/" target="_blank" rel="noopener">as registers</a>. The general purpose I/O port pins in LPC2148 includes P0.0 to P0.31 and P1.16 to P1.31, and actually, these pins are available based on the alternate function utilization.</p>
+<p style="text-align: justify;">Port-0 and Port-1 are 32-bit Input/output ports, and every bit of these ports can be controlled by an individual direction. The operations of port-0 &amp; port-1 depend upon the function of a pin that is selected using the pin connected block. In Port-0, pins like P0.24, P0.26 &amp; P0.27 are not obtainable whereas, in Port-1, the Pins 0 to 15 are not obtainable. Here, both the pins like Port-0 &amp; Port-1 are controlled by two groups of registers discussed below.</p>
+<h2 style="text-align: justify;"><strong>LPC2148 Pin Configuration</strong></h2>
+<figure id="attachment_34919" aria-describedby="caption-attachment-34919" style="width: 625px" class="wp-caption aligncenter"><img class="size-full wp-image-34919" src="https://www.elprocus.com/wp-content/uploads/ARM7-Based-Microcontroller-LPC2148-Pin-Configuration.jpg" alt="ARM7 Based Microcontroller (LPC2148) Pin Configuration" width="625" height="606" srcset="https://www.elprocus.com/wp-content/uploads/ARM7-Based-Microcontroller-LPC2148-Pin-Configuration.jpg 625w, https://www.elprocus.com/wp-content/uploads/ARM7-Based-Microcontroller-LPC2148-Pin-Configuration-300x291.jpg 300w" sizes="(max-width: 625px) 100vw, 625px" /><figcaption id="caption-attachment-34919" class="wp-caption-text"><a href="https://www.nxp.com/" target="_blank" rel="noopener"><strong>ARM7 Based Microcontroller (LPC2148) Pin Configuration</strong></a></figcaption></figure>
+<p style="text-align: justify;"><strong>Pin1-(P0.21/ PWM5CAP1.3/ AD1.6)</strong></p>
+<ul style="text-align: justify;">
+<li>P0.21 is a GPIO pin (general purpose I/O pin)</li>
+<li>AD1.6 is obtainable in LPC2144/46/48 microcontrollers only where an AD1.6 denotes ADC-1, i/p-6.</li>
+<li>PWM5 is a pulse width modulator output-5.</li>
+<li>CAP1.3 is a Capture i/p for Timer-1, channel-3</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin2-(P0.22/ CAP0.0/AD1.7/ MAT0.0 2 </strong></p>
+<ul style="text-align: justify;">
+<li>P0.22 is a GPIO digital pin</li>
+<li>AD1.7 pin is available in LPC2144/46/48 only where an AD1.7 denotes ADC-1, input-7</li>
+<li>CAP0.0 is a capture input pin for Timer-0, channel-0.</li>
+<li>MAT0.0 is a match o/p for Timer-0, channel-0</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin3-RTXC1 3 </strong></p>
+<p style="text-align: justify;">It is an I/p to the RTC-oscillator circuit</p>
+<p style="text-align: justify;"><strong>Pin4- TRACEPKT3/ P1.19</strong></p>
+<ul style="text-align: justify;">
+<li>TRACEPKT3 is a trace packet, bit-3, standard input/output port by the inner pull-up.</li>
+<li>P1.19 is a GPIO digital pin</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin5-RTXC2 </strong></p>
+<p style="text-align: justify;">This is an output pin from the RTC oscillator circuit</p>
+<p style="text-align: justify;"><strong>Pin6, Pin18, Pin25, Pin42, and Pin50</strong></p>
+<p style="text-align: justify;">These pins are a ground reference</p>
+<p style="text-align: justify;"><strong>Pin7-VDDA</strong></p>
+<p style="text-align: justify;">This pin is an analog voltage power supply (3.3V), and this voltage is very useful for the on-chip<a href="https://www.elprocus.com/analog-to-digital-conversion-using-pic-microcontroller/" target="_blank" rel="noopener"> analog to digital converters</a> and digital to analog converters.</p>
+<p style="text-align: justify;"><strong>Pin8- P1.18/TRACEPKT2</strong></p>
+<ul style="text-align: justify;">
+<li>P1.18 is a GPIO digital pin</li>
+<li>TRACEPKT2 is a trace packet, bit-2, standard input/output port by the inner pull-up.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin9- P0.25/AOUT/AD0.4</strong></p>
+<ul style="text-align: justify;">
+<li>P0.25 is a GPIO digital pin I</li>
+<li>AD0.4 denotes ADC-0, input-4</li>
+<li>Aout- the output of DAC and that is accessible only in LPC2142/ LPC2144/ LPC2146/ LPC2148</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin10- D+</strong></p>
+<p style="text-align: justify;">This pin is a USB bidirectional D+ line</p>
+<p style="text-align: justify;"><strong>Pin11- D-</strong></p>
+<p style="text-align: justify;">This pin is a USB bidirectional D- line</p>
+<p style="text-align: justify;"><strong>Pin12-P1.17/TRACEPKT1</strong></p>
+<ul style="text-align: justify;">
+<li>P1.17 is a GPIO digital pin</li>
+<li>TRACEPKT1 is a trace packet, bit-1, standard input/output port by the inner pull-up.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin13-P0.28/ CAP0.2/ AD0.1/MAT0.2</strong></p>
+<ul style="text-align: justify;">
+<li>P0.28 is a GPIO digital pin</li>
+<li>AD0.1 denotes ADC-0, input-1</li>
+<li>CAP0.2 is a capture i/p for Timer-0, channel-2.</li>
+<li>MAT0.2 is a match o/p for Timer-0, channel-2</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin14-P0.29/ CAP0.3/ AD0.2/MAT0.3</strong></p>
+<ul style="text-align: justify;">
+<li>P0.29 is a GPIO digital pin</li>
+<li>AD0.2 denotes ADC-0, input-2</li>
+<li>CAP0.3 is a capture i/p for Timer-0, channel-3.</li>
+<li>MAT0.3 is a match o/p for Timer-0, channel-3</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin15-P0.30/ EINT3/ AD0.3/CAP0.0</strong></p>
+<ul style="text-align: justify;">
+<li>P0.30 is a GPIO digital pin</li>
+<li>AD0.3 denotes ADC-0, input-3</li>
+<li>EINT3 is an external interrupt 3-input.</li>
+<li>CAP0.3 is a capture i/p for Timer-0, channel-0.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin16- P1.16/TRACEPKT0</strong></p>
+<ul style="text-align: justify;">
+<li>P1.16 is a GPIO digital pin</li>
+<li>TRACEPKT1 is a trace packet, bit-0, standard input/output port by inner pull-up</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin17-P0.31/UP_LED/CONNECT</strong></p>
+<ul style="text-align: justify;">
+<li>P0.31 is a GPIO digital pin</li>
+<li>UP_LED is a USB good link LED indicator. When the device is arranged then it is low and when the device is not arranged, then it is high.</li>
+<li>CONNECT- This signal is used to control an exterior resistor (1.5 kΩ) under the control of a software control, and it is used by the feature of Soft Connect</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin19- P0.0/PWM/TXD0</strong></p>
+<ul style="text-align: justify;">
+<li>P0.0 is a GPIO digital pin</li>
+<li>TXD0 is a transmitter o/p for UART0.</li>
+<li>PWM1 is a pulse width modulator o/p-1.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin20- P1.31/TRST</strong></p>
+<ul style="text-align: justify;">
+<li>P1.31 is a GPIO digital pin</li>
+<li>TRST is a test reset for JTAG interface.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin21-P0.1/ PWM3/ RXD0/EINT0</strong></p>
+<ul style="text-align: justify;">
+<li>P0.1 is a GPIO digital pin</li>
+<li>RXD0 is a receiver i/p for UART0.</li>
+<li>PWM3 is a pulse width modulator o/p-3.</li>
+<li>EINT0 is an external interrupt 0-input</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin22- P0.2/ CAP0.0/ SCL0</strong></p>
+<ul style="text-align: justify;">
+<li>P0.2 is a GPIO digital pin</li>
+<li>SCL0 is an I2C0 clock I/O, and open-drain o/p</li>
+<li>CAP0.0 is a capture i/p for Timer-0, channel-0.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin 23, 43, and 51- VDD</strong></p>
+<p style="text-align: justify;">These pins are power supply voltage for the I/O ports as well as the core.</p>
+<p style="text-align: justify;"><strong>Pin24- P1.26/RTCK</strong></p>
+<ul style="text-align: justify;">
+<li>P1.26 is a GPIO digital pin</li>
+<li>RTCK is a returned test CLK o/p, an additional signal added to the JTAG-port. When the frequency of processor changes then it helps debugger synchronization.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin26- P0.3/ SDA0/ MAT0.0/EINT1</strong></p>
+<ul style="text-align: justify;">
+<li>P0.3 is a GPIO digital pin</li>
+<li>SDA0 is an I2C0 data I/O and open drain o/p for I2C bus observance.</li>
+<li>MAT0.0 is matched o/p for timer-0, channel-0.</li>
+<li>EINT1 is an external interrupt 1-i/p.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin27-P0.4/ CAP0.1/ SCK0/AD0.6</strong></p>
+<ul style="text-align: justify;">
+<li>P0.4 is a GPIO digital pin I/O</li>
+<li>SCK0 is a serial CLK for SPI0 and SPI CLK o/p from master/ i/p to slave.</li>
+<li>CAP0.1 is a capture i/p for timer-0, channel-0.</li>
+<li>IAD0.6 denotes ADC-0, input-6</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin28-P1.25/EXTIN0</strong></p>
+<ul style="text-align: justify;">
+<li>P1.25 is a GPIO digital pin I/O</li>
+<li>EXTIN0 is an external trigger i/p, and standard input/output with inner pull-up</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin29- P0.5/MAT0.1/MISO0/AD0.7</strong></p>
+<ul style="text-align: justify;">
+<li>P0.5 is a GPIO digital pin I/O</li>
+<li>MISO0 is a master in slave out for SPI0, data i/p to SPI-master/data o/p from SPI slave.</li>
+<li>MAT0.1 is a match o/p for timer-0, channel-1.</li>
+<li>AD0.7 denotes ADC-0, input-7.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin30-P0.6/MOSI0/CAP0.2/AD1.0</strong></p>
+<ul style="text-align: justify;">
+<li>P0.6 is a GPIO digital pin I/O</li>
+<li>MOSI0 is a master out slave in for SPI0, and data o/p from SPI master/ data i/p to SPI slave.</li>
+<li>CAP0.2 is a capture i/p for Timer-0, channel-2.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin31-P0.7/ PWM2/ SSEL0/EINT2</strong></p>
+<ul style="text-align: justify;">
+<li>P0.7 is a GPIO digital pin I/O</li>
+<li>SSEL0 is a slave select for SPI0 and chooses the SPI-interface as a slave.</li>
+<li>PWM2 is a pulse width modulator output-2.</li>
+<li>EINT2 is an external interrupt 2-input.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin32-P1.24/TRACECLK</strong></p>
+<ul style="text-align: justify;">
+<li>P1.24 is a GPIO digital pin I/O.</li>
+<li>TRACECLK is a trace CLK and standard input/output port with inner pull-up</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin33-P0.8/TXD1/PWM4/AD1.1</strong></p>
+<ul style="text-align: justify;">
+<li>P0.8 is a GPIO digital pin I/O</li>
+<li>TXD1 is a transmitter o/p for UART1.</li>
+<li>PWM4 is a pulse width modulator o/p-4.</li>
+<li>AD1.1 denotes ADC-1, input-1, and it is obtainable only in LPC2144/46/48.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin34- P0.9/PWM6/RXD1/EINT3</strong></p>
+<ul style="text-align: justify;">
+<li>P0.9 is a GPIO digital pin I/O</li>
+<li>RXD1 is a receiver i/p for UART1.</li>
+<li>PWM6 is a pulse width modulator o/p-6.</li>
+<li>EINT3 is an external interrupt 3-input</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin35-P0.10/RTS1/CAP1.0/AD1.2</strong></p>
+<ul style="text-align: justify;">
+<li>P0.10 is a GPIO digital pin I/O</li>
+<li>RTS1 is requesting to send o/p for UART1 and LPC2144/46/48.</li>
+<li>CAP1.0 is a capture i/p for timer-1, channel-0.</li>
+<li>AD1.2 denotes ADC-1, input-2, and it is obtainable only in LPC2144/46/48</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin36-P1.23/PIPESTAT2</strong></p>
+<ul style="text-align: justify;">
+<li>P1.23 is a GPIO digital pin I/O</li>
+<li>PIPESTAT2 is a pipeline status, bit-2., and standard Input/Output port with inner pull-up</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin37-P0.11/ CAP1.1/CTS1/ SCL1</strong></p>
+<ul style="text-align: justify;">
+<li>P0.11 is a GPIO digital pin I/O</li>
+<li>CTS1 is clear to send i/p for UART1, and these are accessible only in LPC2144/46/48</li>
+<li>CAP1.1 is a capture i/p for timer-1, channel-1.</li>
+<li>SCL1 — I2C1 CLK I/O, and open drain o/p for the I2C-bus observance</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin38-P0.12/ MAT1.0/AD1.3/ DSR1</strong></p>
+<ul style="text-align: justify;">
+<li>P0.12 is a GPIO digital pin I/O</li>
+<li>DSR1 is a data set ready i/p for UART1, and these are accessible only in LPC2144/46/48.</li>
+<li>MAT1.0 is a match o/p for timer-1, channel-0.</li>
+<li>AD1.3 denotes ADC input-3, and it is accessible only in LPC2144/46/48.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin39-P0.13/DTR1/MAT1.1/AD1.4</strong></p>
+<ul style="text-align: justify;">
+<li>P0.13 is a GPIO digital pin I/O</li>
+<li>DTR1 is a data terminal ready o/p for UART1 and LPC2144/46/48 only.</li>
+<li>MAT1.1 is a match o/p for timer-1, channel-1.</li>
+<li>AD1.4 denotes ADC input-4, and these are accessible only in LPC2144/46/48.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin40-P1.22/PIPESTAT1</strong></p>
+<ul style="text-align: justify;">
+<li>P1.22 is a GPIO digital pin I/O</li>
+<li>PIPESTAT1 is a pipeline status, bit-1, and standard Input/Output port with inner pull-up</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin41-P0.14/DCD1/EINT1/SDA1</strong></p>
+<ul style="text-align: justify;">
+<li>P0.14 is a GPIO digital pin I/O</li>
+<li>DCD1 is a data carrier detect i/p for UART1, and also only for LPC2144/46/48 only.</li>
+<li>EINT1 is an exterior interrupt 1-input.</li>
+<li>SDA1 is an I2C1 data I/O and an open drain o/p for I2C bus observance</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin44:P1.21/ PIPESTAT0 44 </strong></p>
+<ul style="text-align: justify;">
+<li>I/O P1.21 is a GPIO digital pin I/O</li>
+<li>PIPESTAT0 is a Pipeline Status, bit 0, and standard Input/Output port by the inner pull-up.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin45: P0.15/ EINT2/ RI1/ AD1.5 45 </strong></p>
+<ul style="text-align: justify;">
+<li>I/O P0.15 is a GPIO digital pin I/O</li>
+<li>RI1 is a ring pointer i/p for UART1 and it is accessible only in LPC2144/46/48.</li>
+<li>EINT2 is an external interrupt 2-input.</li>
+<li>AD1.5 indicates ADC 1, input-5, and also available only in LPC2144/46/48</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin46: P0.16/ MAT0.2/ EINT0/ CAP0.2</strong></p>
+<ul style="text-align: justify;">
+<li>P0.16 is a GPIO digital pin I/O</li>
+<li>EINT0 is an external interrupt0- input.</li>
+<li>MAT0.2 is a match o/p for Timer-0, channel -2</li>
+<li>CAP0.2 is a capture i/p for Timer-0, channel-2.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin47: P0.17/ SCK1/ CAP1.2/ MAT1.2 47</strong></p>
+<ul style="text-align: justify;">
+<li>P0.17 is a GPIO digital pin I/O</li>
+<li>CAP1.2 is a capture i/p for Timer-1, channel-2.</li>
+<li>SCK1 is a serial CLK for SSP and CLK o/p from master to slave.</li>
+<li>MAT1.2 is a match o/p for Timer-1, channel-2.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin48: P1.20/ TRACESYNC </strong></p>
+<ul style="text-align: justify;">
+<li>P1.20 is a GPIO digital pin I/O</li>
+<li>TRACESYNC is trace synchronization.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin49: VBAT </strong></p>
+<p style="text-align: justify;">RTC power supply:  This pin gives the supply to the RTC.</p>
+<p style="text-align: justify;"><strong>Pin52: P1.30/TMS </strong></p>
+<p style="text-align: justify;">P1.30 is a GPIO digital pin I/O</p>
+<p style="text-align: justify;">TMS is a test mode select for interfacing of JTAG.</p>
+<p style="text-align: justify;"><strong>Pin53: P0.18/CAP1.3/ MISO1/MAT1.3 </strong></p>
+<ul style="text-align: justify;">
+<li>P0.18 is a GPIO digital pin I/O</li>
+<li>CAP1.3 is a capture i/p for Timer 1, channel 3.</li>
+<li>MISO1 is a master In Slave-out for SSP, and data i/p to SPI- master</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin54: P0.19/ MOSI1/MAT1.2/ CAP1.2 </strong></p>
+<ul style="text-align: justify;">
+<li>P0.19 is a GPIO digital pin I/O.</li>
+<li>MAT1.2 denotes match o/p for Timer 1, channel 2.</li>
+<li>MOSI1 is a master out slave for SSP master.</li>
+<li>CAP1.2 is a capture i/p for Timer 1, channel 2.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin 55: P0.20/ SSEL1/ MAT1.3/ EINT3 </strong></p>
+<ul style="text-align: justify;">
+<li>P0.20 is a GPIO digital pin I/O.</li>
+<li>MAT1.3 is a match o/p for Timer 1, channel 3. I</li>
+<li>SSEL1 is a Slave Select designed for SSP. Here, chooses the interface of SSP as a slave.</li>
+<li>EINT3 is an external interrupt 3-input.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin56: P1.29/TCK</strong></p>
+<ul style="text-align: justify;">
+<li>P1.29 is a GPIO digital pin I/O</li>
+<li>TCK is a test CLK for an interface of JTAG.</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin57: External Reset Input</strong></p>
+<p style="text-align: justify;">The device can be rearranged by a LOW on this pin, effecting Input/Output ports as well as peripherals for obtaining on their default conditions, &amp; processor execution begins at address 0.</p>
+<p style="text-align: justify;"><strong>Pin58: P0.23/VBUS</strong></p>
+<ul style="text-align: justify;">
+<li>P0.23 is a GPIO digital pin I/O</li>
+<li>VBUS specifies the existence of USB-bus power</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin59: VSSA </strong></p>
+<p style="text-align: justify;">VSSA is an analog ground, and this must be the similar voltage like VSS, although it should be separated to reduce error and noise</p>
+<p style="text-align: justify;"><strong>Pin60: P1.28/TDI 60 </strong></p>
+<ul style="text-align: justify;">
+<li>P1.28 is a GPIO digital pin I/O</li>
+<li>TDI pin is a test data is used for interfacing JTAG</li>
+</ul>
+<p style="text-align: justify;"><strong>Pin61: XTAL2 </strong></p>
+<p style="text-align: justify;">XTAL2 is an o/p from the oscillator amplifier</p>
+<p style="text-align: justify;"><strong>Pin62: XTAL1</strong></p>
+<p style="text-align: justify;">XTAL1 is an i/p to the internal CLK generator as well as oscillator circuits</p>
+<p style="text-align: justify;"><strong>Pin63: VREF-ADC Reference</strong></p>
+<p style="text-align: justify;">This pin should be nominally equal or less than to the voltage VDD although it should be separated for reducing error as well as noise.</p>
+<p style="text-align: justify;"><strong>Pin64: P1.27/TDO 64 </strong></p>
+<ul style="text-align: justify;">
+<li>P1.27 is a GPIO digital pin I/O</li>
+<li>TDO is a test data out used for interfacing JTAG.</li>
+</ul>
+<p style="text-align: justify;">Thus, this is about ARM 7 based LPC2148 microcontroller pin configuration. For the electronic engineering students, this information will give a basic knowledge on pin configuration, I/O ports memory, as well as registers. Here is a question for you, what are the applications of the LPC2148 microcontroller?</p>
+								</div>
+																<!-- AddToAny BEGIN -->
+						<div class="a2a_kit a2a_kit_size_32 a2a_default_style single-sharing">
+							<h2 class="social-heading"> Share This Post: </h2>
+							<div class="social-area">
+								<ul class="social-icons">
+									<li class="facebook"> <a class="a2a_button_facebook">  <div> Facebook</div></a></li>
+									<li class="twitter"> <a class="a2a_button_twitter"> <div> Twitter</div></a></li>
+									<li class="google-plus"> <a class="a2a_button_google_plus">  <div> Google+ </div></a></li>
+									<li class="linkedin"> <a class="a2a_button_linkedin">  <div> LinkedIn</div></a></li>
+									<li class="pinterest"> <a class="a2a_button_pinterest">  <div> Pinterest</div></a></li>
+								</ul>
+							</div>
+						</div>
+						<script defer type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+						<!-- AddToAny END -->
+									
+					
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.elprocus.com/introduction-to-arm7-based-lpc2148-microcontroller-architecture/" rel="prev"><span class="meta-nav" aria-hidden="true"> &lsaquo; Previous</span> <span class="post-title">Introduction to ARM7 Based LPC2148 Microcontroller Architecture</span></a></div><div class="nav-next"><a href="https://www.elprocus.com/what-are-types-of-renewable-energies/" rel="next"><span class="meta-nav" aria-hidden="true">Next &rsaquo; </span> <span class="post-title">Different Types of Renewable Energy Sources Explained</span></a></div></div>
+	</nav>					<div class="related_heading">
+	Related Content </div>
+<div class="related_wrapper">
+	
+	
+        <div class="related_inner">
+			<div class="related_thumb"> <a href="https://www.elprocus.com/instruction-set-of-8085-microprocessor/"><img width="200" height="125" src="https://www.elprocus.com/wp-content/uploads/Instruction-Set-of-8085-Microprocessor-200x125.jpg" class="attachment-related-thumb size-related-thumb wp-post-image" alt="" loading="lazy" srcset="https://www.elprocus.com/wp-content/uploads/Instruction-Set-of-8085-Microprocessor-200x125.jpg 200w, https://www.elprocus.com/wp-content/uploads/Instruction-Set-of-8085-Microprocessor-300x188.jpg 300w, https://www.elprocus.com/wp-content/uploads/Instruction-Set-of-8085-Microprocessor.jpg 480w" sizes="(max-width: 200px) 100vw, 200px" /> </a>
+			</div> 
+	      	<div class="related-title">
+	      		<a href="https://www.elprocus.com/instruction-set-of-8085-microprocessor/" rel="bookmark">Instruction Set of 8085 Microprocessor &#038; Its Classification</a>
+	      	</div>
+	      	<div class="clear-both"></div>
+        </div>
+        
+	
+        <div class="related_inner">
+			<div class="related_thumb"> <a href="https://www.elprocus.com/position-sensor/"><img width="200" height="125" src="https://www.elprocus.com/wp-content/uploads/Position-Sensor-200x125.jpg" class="attachment-related-thumb size-related-thumb wp-post-image" alt="Position Sensor" loading="lazy" srcset="https://www.elprocus.com/wp-content/uploads/Position-Sensor-200x125.jpg 200w, https://www.elprocus.com/wp-content/uploads/Position-Sensor-300x188.jpg 300w, https://www.elprocus.com/wp-content/uploads/Position-Sensor.jpg 480w" sizes="(max-width: 200px) 100vw, 200px" /> </a>
+			</div> 
+	      	<div class="related-title">
+	      		<a href="https://www.elprocus.com/position-sensor/" rel="bookmark">What is Position Sensor : Working &#038; Its Applications</a>
+	      	</div>
+	      	<div class="clear-both"></div>
+        </div>
+        
+	
+        <div class="related_inner">
+			<div class="related_thumb"> <a href="https://www.elprocus.com/thermionic-emission/"><img width="200" height="125" src="https://www.elprocus.com/wp-content/uploads/Thermionic-Effect-200x125.jpg" class="attachment-related-thumb size-related-thumb wp-post-image" alt="Thermionic Effect" loading="lazy" srcset="https://www.elprocus.com/wp-content/uploads/Thermionic-Effect-200x125.jpg 200w, https://www.elprocus.com/wp-content/uploads/Thermionic-Effect-300x188.jpg 300w, https://www.elprocus.com/wp-content/uploads/Thermionic-Effect.jpg 480w" sizes="(max-width: 200px) 100vw, 200px" /> </a>
+			</div> 
+	      	<div class="related-title">
+	      		<a href="https://www.elprocus.com/thermionic-emission/" rel="bookmark">What is Thermionic Emission : Working &#038; Its Applications</a>
+	      	</div>
+	      	<div class="clear-both"></div>
+        </div>
+        
+	
+        <div class="related_inner">
+			<div class="related_thumb"> <a href="https://www.elprocus.com/cmos-inverter/"><img width="200" height="125" src="https://www.elprocus.com/wp-content/uploads/CMOS-Inverter-2-200x125.jpg" class="attachment-related-thumb size-related-thumb wp-post-image" alt="CMOS Inverter" loading="lazy" srcset="https://www.elprocus.com/wp-content/uploads/CMOS-Inverter-2-200x125.jpg 200w, https://www.elprocus.com/wp-content/uploads/CMOS-Inverter-2-300x188.jpg 300w, https://www.elprocus.com/wp-content/uploads/CMOS-Inverter-2.jpg 480w" sizes="(max-width: 200px) 100vw, 200px" /> </a>
+			</div> 
+	      	<div class="related-title">
+	      		<a href="https://www.elprocus.com/cmos-inverter/" rel="bookmark">What is CMOS Inverter : Working &#038; Its Applications</a>
+	      	</div>
+	      	<div class="clear-both"></div>
+        </div>
+        
+	 
+</div> <!-- .related_wrapper -->
+<div class="clear-both"></div>
+										<div id="comments" class="comments-area">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Add Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/arm7-based-lpc2148-microcontroller-pin-configuration/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.elprocus.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate> <p class="comment-form-comment"><label for="comment">Comment:</label><br /><textarea id="comment" name="comment" aria-required="true" value="comment" ></textarea></p> <p class="comment-form-author"><label for="author">Name <span class="required" aria-hidden="true">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required" aria-hidden="true">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" required /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='34918' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="814b4019f5" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="130"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+				</div> <!-- .single-content-holder -->
+			</article> <!-- #post-## -->
+		</div> <!-- .post-wrapper -->
+		<div class="primary-sidebar">
+			<div id="widget-area" class="widget-area" role="complementary">
+			<aside id="search-3" class="widget widget_search"><div class="sidebar-widget-title"><h3 class="widget-title">Search</h3></div><div class="search_form">
+    <form method="get" id="searchform" action="https://www.elprocus.com/">
+      <input type="search" placeholder=" " class="search_input" value="" name="s" id="s">
+      <input type="submit" value="" class="searchbutton">
+    </form>
+</div></aside>
+		<aside id="recent-posts-4" class="widget widget_recent_entries">
+		<div class="sidebar-widget-title"><h3 class="widget-title">Recent Posts</h3></div>
+		<ul>
+											<li>
+					<a href="https://www.elprocus.com/pneumatic-system/">Pneumatic System : Working &#038; Its Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/instruction-set-of-8085-microprocessor/">Instruction Set of 8085 Microprocessor &#038; Its Classification</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/position-sensor/">What is Position Sensor : Working &#038; Its Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/coupled-inductor/">What is Coupled Inductor : Working &#038; Its Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/thermionic-emission/">What is Thermionic Emission : Working &#038; Its Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/address-resolution-protocol/">What is Address Resolution Protocol : Working &#038; Its Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/cmos-inverter/">What is CMOS Inverter : Working &#038; Its Applications</a>
+									</li>
+					</ul>
+
+		</aside><aside id="custom_html-10" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- /21745905128/Elprocus_article_pages/Sidebar_mid -->
+<div id='div-gpt-ad-1629791401982-6' style='min-width: 300px; min-height: 50px;'>
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-6'); });
+</script>
+</div></div></aside><aside id="custom_html-7" class="widget_text widget widget_custom_html"><div class="sidebar-widget-title"><h3 class="widget-title">Most Read Posts</h3></div><div class="textwidget custom-html-widget"><ul>							
+<li>
+					<a href="https://www.elprocus.com/half-adder-and-full-adder/">Half Adder and Full Adder with Truth Table</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/mosfet-as-a-switch-circuit-diagram-free-circuits/">MOSFET Basics, Working Principle and Applications</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/latest-electronics-projects-ideas/">Latest Electronics Project Ideas</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/the-working-of-a-pid-controller/">How Does a PID Controller Work? - Structure & Tuning Methods</a>
+									</li>
+											<li>
+					<a href="https://www.elprocus.com/top-electrical-project-ideas-for-engineering-students/">New 100+ Top Electrical Projects Ideas </a>
+									</li>
+											
+					</ul></div></aside><aside id="newsletterwidget-2" class="widget widget_newsletterwidget"><div class="sidebar-widget-title"><h3 class="widget-title">Subscribe to Newsletter</h3></div><div class="tnp tnp-widget"><form method="post" action="https://www.elprocus.com/?na=s">
+
+<input type="hidden" name="nr" value="widget"><input type="hidden" name="nlang" value=""><div class="tnp-field tnp-field-firstname"><label for="tnp-1">First name or full name</label>
+<input class="tnp-name" type="text" name="nn" id="tnp-1" value=""></div>
+<div class="tnp-field tnp-field-email"><label for="tnp-2">Email</label>
+<input class="tnp-email" type="email" name="ne" id="tnp-2" value="" required></div>
+<div class="tnp-field tnp-privacy-field"><label><input type="checkbox" name="ny" required class="tnp-privacy">&nbsp;By continuing, you accept the privacy policy</label></div><div class="tnp-field tnp-field-button"><input class="tnp-submit" type="submit" value="Subscribe" >
+</div>
+</form>
+</div></aside><aside id="custom_html-11" class="widget_text widget widget_custom_html"><div class="sidebar-widget-title"><h3 class="widget-title">Projects</h3></div><div class="textwidget custom-html-widget"><ul>							
+<li><a href="https://www.elprocus.com/555-timer-circuits-for-engineering-students/">555 Timer Circuits (6)</a></li>
+<li><a href="https://www.elprocus.com/8051-microcontroller-projects-engineering-students/">8051 Projects (60+)</a></li>
+<li><a href="https://www.elprocus.com/arduino-projects/">Arduino Projects (40+)</a></li>
+<li><a href="https://www.elprocus.com/arm-based-projects/">ARM Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/communication-based-projects-engineering-students/">Communication Projects (140+)</a></li>
+<li><a href="https://www.elprocus.com/dtmf-based-project-ideas/">DTMF Projects (25+)</a></li>
+<li><a href="https://www.elprocus.com/ece-projects-for-engineering-students/">ECE Projects (400+)</a></li>
+<li><a href="https://www.elprocus.com/eee-project-ideas-for-final-year-engineering-students/">EEE Projects (240+)</a></li>
+<li><a href="https://www.elprocus.com/final-year-engineering-projects-for-electronics-and-instrumentation-students/">EIE Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/electrical-mini-projects-ideas/">Electrical Mini Projects (120+)</a></li>
+<li><a href="https://www.elprocus.com/electrical-project-ideas-for-engineering-students/">Electrical Project Ideas (300+)</a></li>
+<li><a href="https://www.elprocus.com/electronics-projects-for-engineering-students/">Electronics Projects (160+)</a></li>
+<li><a href="https://www.elprocus.com/embedded-system-projects/">Embedded Projects (200+)</a></li>
+<li><a href="https://www.elprocus.com/gsm-based-projects/">GSM Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/home-automation-projects-engineering-students/">Home Automation Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/iot-projects-for-engineering-students/">IOT Projects (30)</a></li>
+<li><a href="https://www.elprocus.com/labview-projects-for-engineering-students/">LabView Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/matlab-projects-for-engineering-students/">Matlab Projects (190+)</a></li>
+<li><a href="https://www.elprocus.com/advanced-microcontroller-based-mini-projects-for-engineering-students/">Microcontroller Mini Projects (80+)</a></li>
+<li><a href="https://www.elprocus.com/simple-electronic-circuits-for-beginners/">Mini Project Circuits (20+)</a></li>
+<li><a href="https://www.elprocus.com/simple-mini-projects-for-ece-and-eee-students/">Mini Project Ideas (45+)</a></li>
+<li><a href="https://www.elprocus.com/top-pic-microcontroller-projects-ideas/">PIC Projects (30+)</a></li>
+<li><a href="https://www.elprocus.com/power-electronics-project-ideas/">Power Electronics Projects (45+)</a></li>
+<li><a href="https://www.elprocus.com/latest-raspberry-pi-projects/">Raspberry Pi Projects (9)</a></li>
+<li><a href="https://www.elprocus.com/rfid-based-projects/">RFID Projects (70+)</a></li>
+<li><a href="https://www.elprocus.com/robotics-projects-ideas-engineering-students/">Robotics Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/sensor-based-electronics-projects/">Sensor Projects (40+)</a></li>
+<li><a href="https://www.elprocus.com/solar-energy-project-ideas/">Solar Projects (150+)</a></li>
+<li><a href="https://www.elprocus.com/ieee-based-list-of-best-vlsi-projects-for-engineering-students-in-2014/">VLSI Projects (180+)</a></li>
+<li><a href="https://www.elprocus.com/wireless-communication-project-ideas/">Wireless Projects (100+)</a></li>
+<li><a href="https://www.elprocus.com/zigbee-based-projects-ideas-engineering-students/">Zigbee Projects (120+)</a></li>
+</ul></div></aside><aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- /21745905128/Elprocus_article_pages/Sidebar_bottom -->
+<div id='div-gpt-ad-1629791401982-7' style='min-width: 300px; min-height: 50px;'>
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1629791401982-7'); });
+</script>
+</div></div></aside>		</div><!-- .widget-area -->
+	</div>	<div class="clear-both"></div>
+</section>
+	</main> <!-- .main  -->
+		<footer id="colophon" class="site-footer" role="contentinfo">
+				
+			<div class="footer-menu-wrapper">
+				<div class="footer-navigation">
+                &nbsp;
+					<!--<ul id="menu-elprocus-1" class="footer_menu"><li id="menu-item-26356" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26356"><a href="https://www.elprocus.com">Home</a></li>
+<li id="menu-item-14329" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14329"><a href="https://www.elprocus.com/category/electrical-2/">Electrical</a></li>
+<li id="menu-item-14330" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-14330"><a href="https://www.elprocus.com/category/electronics-2/">Electronics</a></li>
+<li id="menu-item-36604" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36604"><a href="https://www.elprocus.com/category/communication/">Communication</a></li>
+<li id="menu-item-14335" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14335"><a href="https://www.elprocus.com/category/robotics/">Robotics</a></li>
+<li id="menu-item-14334" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14334"><a href="https://www.elprocus.com/category/project-ideas/">Projects</a></li>
+<li id="menu-item-14660" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14660"><a href="https://www.elprocus.com/category/general/">General</a>
+<ul class="sub-menu">
+	<li id="menu-item-26749" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26749"><a href="https://www.elprocus.com/category/arduino/">Arduino</a></li>
+	<li id="menu-item-14336" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14336"><a href="https://www.elprocus.com/category/technology/">Technology</a></li>
+	<li id="menu-item-14661" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14661"><a href="https://www.elprocus.com/category/free-circuits/">Free Circuits</a></li>
+	<li id="menu-item-14333" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14333"><a href="https://www.elprocus.com/category/interview-questions/">Interview Questions</a></li>
+</ul>
+</li>
+</ul>-->
+				</div>
+			</div>
+			<div id="footer">
+								<div class="footer-widget-area">
+					<aside id="nav_menu-3" class="footer-widgets widget widget_nav_menu"><div class="footer-widget-title"><h3 class="widget-title">Categories</h3></div><div class="menu-widget-menu-container"><ul id="menu-widget-menu" class="menu"><li id="menu-item-40792" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40792"><a href="https://www.elprocus.com/category/communication/">Communication</a></li>
+<li id="menu-item-32475" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32475"><a href="https://www.elprocus.com/category/electrical-2/">Electrical</a></li>
+<li id="menu-item-32476" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-32476"><a href="https://www.elprocus.com/category/electronics-2/">Electronics</a></li>
+<li id="menu-item-32474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32474"><a href="https://www.elprocus.com/category/project-ideas/">Project Ideas</a></li>
+<li id="menu-item-32477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32477"><a href="https://www.elprocus.com/category/robotics/">Robotics</a></li>
+<li id="menu-item-32478" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32478"><a href="https://www.elprocus.com/category/technology/">Technology</a></li>
+</ul></div></aside>				</div>
+								   
+								<div class="footer-widget-area second-widget">
+					<aside id="recent-comments-3" class="footer-widgets widget widget_recent_comments"><div class="footer-widget-title"><h3 class="widget-title">Recent Comments</h3></div><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Tarun Agarwal</span> on <a href="https://www.elprocus.com/an-overview-of-li-fi-technology-and-its-benefits/#comment-293900">An Overview of Li-Fi Technology and its Benefits</a></li><li class="recentcomments"><span class="comment-author-link">Tarun Agarwal</span> on <a href="https://www.elprocus.com/phase-difference-formula-equation/#comment-293899">What is Phase Difference : Formula &#038; Its Equation</a></li><li class="recentcomments"><span class="comment-author-link">Kim Yong Lak</span> on <a href="https://www.elprocus.com/phase-difference-formula-equation/#comment-293868">What is Phase Difference : Formula &#038; Its Equation</a></li><li class="recentcomments"><span class="comment-author-link">Sajid</span> on <a href="https://www.elprocus.com/an-overview-of-li-fi-technology-and-its-benefits/#comment-293432">An Overview of Li-Fi Technology and its Benefits</a></li></ul></aside>				</div>
+				
+								<div class="footer-widget-area last-widget">
+					<aside id="text-14" class="footer-widgets widget widget_text"><div class="footer-widget-title"><h3 class="widget-title">Follow On Facebook</h3></div>			<div class="textwidget"><a href="https://www.facebook.com/elprocus"><img src="https://www.elprocus.com/wp-content/uploads/elprocus-facebook-.png" alt="Elprocus Facebook"</img></a></div>
+		</aside>				</div>
+				
+				<div class="clear-both"></div>
+				<style>
+					.cta div {
+						background: url(https://www.elprocus.com/elprocus-staging/wp-content/uploads/phone.png) left 7px no-repeat rgba(0,0,0,0);
+						display: inline-block;
+						line-height: 44px;
+						padding: 10px 0 10px 65px;
+						margin:0 28px;
+					}
+					.cta .mail { 
+						background: url(https://www.elprocus.com/elprocus-staging/wp-content/uploads/mail.png) left 7px no-repeat rgba(0,0,0,0);
+					}
+					.quick-info li {
+						display: inline-block;
+						width: 16.5%;
+						text-align:center;
+					}					
+					/*
+					.footercover {
+						background: #f2f2f2
+					}
+					*/
+					.copytext {
+						background: #e6e6e6
+					}
+					.top-footer {
+						padding: 2px 0
+					}					
+					footer li a {
+						color: #333;
+						font-family:inherit;
+						font-size:14px;
+					}
+				</style>  				
+				<div class="site-info" style="margin-top:20px;">
+					<footer><div class="footercover"><div class="top-footer"><div class="container"><div class="row">
+										<div class=" col-sm-4 marb20"><div class="info-sec"><ul class="quick-info"><li><a href="https://www.elprocus.com/advertise-with-us/">Advertise With Us</a></li><li> <a href="https://www.elprocus.com/disclaimer/">Disclaimer</a></li><li> <a href="https://www.elprocus.com/report-violation/">Report Violation</a></li><li> <a href="https://www.elprocus.com/image-usage-policy/">Image Usage Policy</a></li><li> <a href="https://www.elprocus.com/privacy-policy/">Privacy Policy</a></li><li><a href="https://www.elprocus.com/contact/">Contact Us</a></li></ul></div></div>
+										</div></div></div></div></div></div><div class="copytext"><div class="text-center"><p style="margin: 0; padding: 10px 0; text-align:center">Copyright 2013 - 2022 © Elprocus</p></div></div> </footer>
+				</div>
+			</div>			
+		</footer>
+	</div> <!-- .container -->
+</div> <!-- .wrapper -->
+<div class="mobmenu-overlay"></div><div class="mob-menu-header-holder mobmenu"  data-menu-display="mob-menu-slideout-over" data-open-icon="down-open" data-close-icon="up-open"><div  class="mobmenul-container"><a href="#" class="mobmenu-left-bt mobmenu-trigger-action" data-panel-target="mobmenu-left-panel" aria-label="Left Menu Button"><i class="mob-icon-menu mob-menu-icon"></i><i class="mob-icon-cancel-1 mob-cancel-button"></i></a></div><div class="mobmenur-container"><a href="#" class="mobmenu-right-bt mobmenu-trigger-action" data-panel-target="mobmenu-right-panel" aria-label="Right Menu Button"><i class="mob-icon-menu mob-menu-icon"></i><i class="mob-icon-cancel-1 mob-cancel-button"></i></a></div></div>
+		<div class="mobmenu-left-alignment mobmenu-panel mobmenu-left-panel  ">
+		<a href="#" class="mobmenu-left-bt" aria-label="Left Menu Button"><i class="mob-icon-cancel-1 mob-cancel-button"></i></a>
+
+		<div class="mobmenu-content">
+		<div class="menu-elprocus-container"><ul id="mobmenuleft" role="menubar" aria-label="Main navigation for mobile devices"><li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-26356"><a href="https://www.elprocus.com" role="menuitem" class="">Home</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14329"><a href="https://www.elprocus.com/category/electrical-2/" role="menuitem" class="">Electrical</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-14330"><a href="https://www.elprocus.com/category/electronics-2/" role="menuitem" class="">Electronics</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36604"><a href="https://www.elprocus.com/category/communication/" role="menuitem" class="">Communication</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14335"><a href="https://www.elprocus.com/category/robotics/" role="menuitem" class="">Robotics</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14334"><a href="https://www.elprocus.com/category/project-ideas/" role="menuitem" class="">Projects</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14660"><a href="https://www.elprocus.com/category/general/" role="menuitem" class="">General</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26749"><a href="https://www.elprocus.com/category/arduino/" role="menuitem" class="">Arduino</a></li>	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14336"><a href="https://www.elprocus.com/category/technology/" role="menuitem" class="">Technology</a></li>	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14661"><a href="https://www.elprocus.com/category/free-circuits/" role="menuitem" class="">Free Circuits</a></li>	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14333"><a href="https://www.elprocus.com/category/interview-questions/" role="menuitem" class="">Interview Questions</a></li></ul>
+</li></ul></div>
+		</div><div class="mob-menu-left-bg-holder"></div></div>
+
+						<div class="mobmenu-right-alignment mobmenu-panel mobmenu-right-panel  ">
+				<a href="#" class="mobmenu-right-bt" aria-label="Right Menu Button"><i class="mob-icon-cancel-1 mob-cancel-button"></i></a>
+					<div class="mobmenu-content">
+			<div class="menu-secondary-menu-container"><ul id="mobmenuright" role="menubar" aria-label="Main navigation for mobile devices"><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26394"><a href="https://www.elprocus.com/category/projects/" role="menuitem" class="">Projects</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26395"><a href="https://www.elprocus.com/category/projects/ece-projects/" role="menuitem" class="">ECE Projects</a></li>	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26396"><a href="https://www.elprocus.com/category/projects/eee-projects/" role="menuitem" class="">EEE Projects</a></li></ul>
+</li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39827"><a href="https://www.elprocus.com/category/project-ideas/" role="menuitem" class="">Project Ideas</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26388"><a href="https://www.elprocus.com/category/ic/" role="menuitem" class="">IC</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26389"><a href="https://www.elprocus.com/category/microcontrollers/" role="menuitem" class="">Microcontrollers</a>
+	<ul  role='menu' class="sub-menu ">
+		<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26390"><a href="https://www.elprocus.com/category/microcontrollers/8051/" role="menuitem" class="">8051</a></li>		<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26392"><a href="https://www.elprocus.com/category/microcontrollers/avr/" role="menuitem" class="">AVR</a></li>		<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26393"><a href="https://www.elprocus.com/category/microcontrollers/pic/" role="menuitem" class="">PIC</a></li>		<li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26391"><a href="https://www.elprocus.com/category/microcontrollers/arm/" role="menuitem" class="">ARM</a></li>	</ul>
+</li></ul>
+</li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39834"><a href="https://www.elprocus.com/category/embedded/" role="menuitem" class="">Embedded</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39833"><a href="https://www.elprocus.com/category/sensors/" role="menuitem" class="">Sensors</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-39831"><a href="https://www.elprocus.com/tag/components/" role="menuitem" class="">Components</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26398"><a href="https://www.elprocus.com/category/tools/" role="menuitem" class="">Tools</a>
+<ul  role='menu' class="sub-menu ">
+	<li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26400"><a href="https://www.elprocus.com/online-resistor-color-code-calculator/" role="menuitem" class="">Resistor Color Code Calculator</a></li>	<li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27257"><a href="https://www.elprocus.com/ohms-law-calculator/" role="menuitem" class="">Ohms Law Calculator</a></li>	<li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39829"><a href="https://www.elprocus.com/circuit-design-softwares/" role="menuitem" class="">Circuit Design</a></li>	<li role="none"  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39830"><a href="https://www.elprocus.com/pcb-design-softwares/" role="menuitem" class="">PCB Design</a></li></ul>
+</li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26410"><a href="https://www.elprocus.com/category/infographics/" role="menuitem" class="">Infographics</a></li><li role="none"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-39828"><a href="https://www.elprocus.com/category/news/" role="menuitem" class="">News</a></li></ul></div>
+			</div><div class="mob-menu-right-bg-holder"></div></div>
+
+		<script type='text/javascript' defer src='https://www.elprocus.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.elprocus.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/themes/technews-codebase/js/off-canvas-menu.js' id='off-canvas-menu-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/themes/technews-codebase/js/jquery.flexslider-min.js' id='flexslider-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/themes/technews-codebase/js/jquery.fitvids.js' id='fitvids-load-js'></script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-includes/js/comment-reply.min.js' id='comment-reply-js'></script>
+<script type='text/javascript' defer src='https://www.google.com/recaptcha/api.js?render=6LeMSm8aAAAAACX9159rJCOG_2cvzThha9WHkqry&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LeMSm8aAAAAACX9159rJCOG_2cvzThha9WHkqry","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://www.elprocus.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js' id='wpcf7-recaptcha-js'></script>
+<script>!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script></body>
+</html>
+<!-- Performance optimized by Redis Object Cache. Learn more: https://wprediscache.com -->

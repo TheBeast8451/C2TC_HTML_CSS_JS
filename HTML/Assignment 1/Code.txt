@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NCET Website</title>
+</head>	
+<body>
+	<h1>Heading 1 </h1>
+	<h2>Heading 2 </h2>
+	<h3>Heading 3 </h3>
+	<h4>Heading 4 </h4>
+	<h5>Heading 5 </h5>
+	<h6>Heading 6 </h6>
+
+<!-- Paragraph -->
+<p> <strong>The Nagarjuna Education Society </strong>stands as an icon for enriching education, ethics and practical learning for the benefit of the society and the young aspiring students. Foreseeing the necessity of professional academic educational facilities that are imbibed in a strong value system, Nagarjuna Education Society was established in 1995, under the able guidance of its founder <em>Sri. J V.Ranga Raju</em>, leading industrialist and philanthropist. NES is today pursuing its mission with some of the finest facilities in Education-from primary school to professional education.
+<br>The link to NCET website is 
+<a href ="https://ncet.co.in/" target="_blank"> NCET</a>
+</p>
+
+<!-- Lists -->
+<ul>
+	<li> Autonomous </li>
+	<li> NBA </li>
+	<li> NAAC </li>
+	<li> AICTE </li>
+</ul>
+
+<ol>
+	<li> Autonomous </li>
+	<li> NBA </li>
+	<li> NAAC </li>
+	<li> AICTE </li>
+</ol>
+<br>
+<!-- Tables -->
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Email</th>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td>Adarsh</td>
+			<td>22</td>
+			<td>adarsh@gmail.com</td>
+		</tr>
+		<tr>
+			<td>Chetan</td>
+			<td>23</td>
+			<td>chetan@gmail.com</td>
+		</tr>
+		<tr>
+			<td>Ankita</td>
+			<td>25</td>
+			<td>ankita@gmail.com</td>
+		</tr>
+	</tbody>
+
+</table>
+<br>
+
+<!-- Images -->
+<a href="Images/NCET.png">
+	<img src="Images/NCET.png" width="150" height="150">
+</a>
+
+<!-- Forms -->
+<form action="process.php" method="GET">
+	<div>
+		<label>Full Name</label>
+		<input type="text" placeholder="Enter your full name" name="full name">
+	</div>
+<br>
+	<div>
+		<label>Email ID </label>
+		<input type="text" placeholder="Enter your email Id" name="full name">
+	</div>
+<br>
+	<div>
+		<label>Mobile No.</label>
+		<input type="text" placeholder="Enter your Mobile Number" name="full name">
+	</div>
+<br>
+	<div>
+		<label>Message</label>
+		<textarea name =" ">
+		</textarea>
+	</div>
+<br>
+
+<div>
+	<label>Gender</label>
+	<select name = "Gender">
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+	<option value="Others">Others</option>
+</select>
+</div>
+</form>
+<br>
+
+<!-- Buttons -->
+<button>Submit</button>
+<br>
+
+<!-- Quotations -->
+<blockquote cite="https://ncet.co.in/">
+<h3>Our Foundation</h3>
+	
+<blockquote>
+NCET aims at equipping students with industry-centric knowledge & abilities through continual improvement of system & academic professionalism. NGI stands as an epitome of excellence in delivering brilliant minds for the qualitative growth of the nation and the world.
+</blockquote>
+
+<p><abbr title="Nagarjuna College of Engineering and Technology">
+	NCET is an Engineering College</p>
+<br>
+
+<footer id ="Main-Footer">
+	<p>Copyright &copy; 2020,NCET Website</p>
+</footer>
+
+<style type="text/css">
+		#Main-Footer
+		{
+			text-align: center;
+			background-color: red;
+			color: black;
+			padding: 5px;
+		}
+		
+	</style>
+
+</body>
+</html>
